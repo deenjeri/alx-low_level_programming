@@ -1,7 +1,7 @@
-#include "main.h"
+include "main.h"
 
 /**
- * jack_bauer - Displays every minute of the day
+ * jack_bauer - Prints every minute of the day of Jack Bauer
  *
  * Return: void
  */
@@ -38,4 +38,3 @@ _putchar('\n');
 }
 }
 }
-
