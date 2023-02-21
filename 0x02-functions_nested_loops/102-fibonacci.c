@@ -27,4 +27,3 @@ nextTerm = t1 + t2;
 
 return (0);
 }
-
