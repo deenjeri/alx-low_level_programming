@@ -1,21 +1,22 @@
-include"main.h"
+#include "main.h"
 
 /**
- * main - Entry point
- *
- * Description: prints _putchar using putchar prototype
+ * main - Print the word "_putchar"
  *
  * Return: Always 0 (Success)
-*/
+ */
 
 int main(void)
 {
-	char str[] = "_putchar";
-	int ch;
+int i;
+char p[] = "_putchar";
 
-	for (ch = 0; ch < 8; ++ch)
-		_putchar(str[ch]);
-	_putchar('\n');
+for (i = 0; i < 9; i++)
+{
+_putchar(p[i]);
+}
+_putchar('\n');
 
-	return (0);
+return (0);
+
 }
