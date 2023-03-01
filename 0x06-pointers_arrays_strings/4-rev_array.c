@@ -1,37 +1,20 @@
 #include "main.h"
 
 /**
- * cap_string - function that capitalize first character of a word
- * @str: string to capitalize
- * Return: returns the capitalized string
+ * reverse_array - function that reverse content of array
+ * @a: array
+ * @n: number of elements
  */
 
-char *cap_string(char *str)
+void reverse_array(int *a, int n)
 {
 
-int index = 0;
+int tmp, index;
 
-while (str[++index])
+for (index = n - 1; index > n / 2; index--)
 {
-while (!(str[index] >= 'a' && str[index] <= 'z'))
-index++;
-
-if (str[index - 1] == ' ' ||
-str[index - 1] == '\t' ||
-str[index - 1] == '\n' ||
-str[index - 1] == ',' ||
-str[index - 1] == ';' ||
-str[index - 1] == '.' ||
-str[index - 1] == '!' ||
-str[index - 1] == '?' ||
-str[index - 1] == '"' ||
-str[index - 1] == '(' ||
-str[index - 1] == ')' ||
-str[index - 1] == '{' ||
-str[index - 1] == '}')
-
-str[index] -= 32;
+tmp = a[n - 1 - index];
+a[n - 1 - index] = a[index];
+a[index] = tmp;
 }
-
-return (str);
 }
