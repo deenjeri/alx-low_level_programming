@@ -33,4 +33,5 @@ str[index - 1] == '}')
 str[index] -= 32;
 }
 
-return (s
+return (str);
+}
