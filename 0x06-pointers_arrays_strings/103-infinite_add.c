@@ -1,52 +1,46 @@
 #include "main.h"
 
 /**
- * infinite_add - C function that adds two numbers stored...
- * ...in strings to a buffer.
- * @n1: first number to be added
- * @n2: second number
- * @r: stored result
- * @size_r: size of buffer
- * Return: returns pointer to result
+ * infinite_add - adds two numbers.
+ * @n1:char
+ * @n2:char.
+ * @r:char
+ * @size_r:int
+ * Return:char.
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-}
+int i, j, k, l, m, n;
 
-/**
- * add_strings - adds two numbers in 2 strings
- * @n1: string containing 1st No.
- * @n2: string containing 2nd No.
- * @r: Buffer to store result
- * @r_index: Current index of buffer
- * Return: return conditional results
- */
-
-char *add_strings(char *n1, char *n2, char *r, int r_index)
-{
-int num, tens = 0;
-
-for (; *n1 && *n2; n1--, n2--, r_index--)
-{
-num = (*n1 - '0') + (*n2 - '0');
-num += tens;
-*(r + r_index) = (num % 10) + '0';
-tens = num / 10;
-}
-
-for (; *n1; n1--; r_index++)
-{
-num = *(n1 - '0') + tens;
-*(r + r_index) = (num % 10) + '0';
-tens = num / 10;
-}
-
-for (; *n2; n2--; r_index--)
-{
-num = (*n2 - '0') + tens;
-*(r + r_index) = (num % 10) + '0';
-tens = num / 10;
-}
-
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
+		return (0);
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	{
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
+	}
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
+		return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
 }
